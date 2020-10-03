@@ -352,6 +352,11 @@ body{
     outline: none;
     cursor: pointer;
     box-shadow: 0px 0px 5px 0px;
+    transition: .2s ease-in;
+}
+#prevBtn:hover , #nextBtn:hover , #toggle:hover{
+    background: var(--color-one);
+    color: var(--color-text);
 }
 #lb-back {
     position: fixed;
