@@ -6,26 +6,6 @@ var scroll = new SmoothScroll('a[href*="#"]',{
     speedAsDuration: true
 });
 
-// // Header shrink on scroll
-// const header = document.querySelector('header-wrapper');
-// window.onscroll = function(){
-//     var top = window.scrollY;
-//     if(top>=100){
-//       header.classList.add('shrink');
-//     }else{
-//         header.classList.remove('shrink');
-//     }
-// }
-// // Header background change on scroll
-// const header = document.querySelector('.header');
-// window.onscroll = function(){
-//     var top = window.scrollY;
-//     if(top>=0){
-//         header.classList.add('paint');
-//     }else{
-//         header.classList.remove('paint');
-//     }
-// }
 
 // click on hamburger menu
 
@@ -37,81 +17,22 @@ hamburger.addEventListener('click',() =>{
 })
 
 
+// Background auto change
+// Original JavaScript code by Chirp Internet: www.chirp.com.au
+// Please acknowledge use of this code by including this header.
 
-// Auto change background 
-// Testiranje  smooth transition za pozadinu
+window.addEventListener("DOMContentLoaded", function(e) {
 
-// startImageTransition(); 
-  
-//   function startImageTransition() { 
-//     var images = document.getElementsByClassName("main-background"); 
+  var stage = document.getElementById("main-images");
+  var fadeComplete = function(e) { stage.appendChild(arr[0]); };
+  var arr = stage.getElementsByTagName("a");
+  for(var i=0; i < arr.length; i++) {
+    arr[i].addEventListener("animationend", fadeComplete, false);
+  }
 
-//     for (var i = 0; i < images.length; ++i) { 
-//       images[i].style.opacity = 1; 
-//     } 
-
-//     var top = 1; 
-
-//     var cur = images.length - 1; 
-
-//     setInterval(changeImage, 4000); 
-
-//      async function changeImage() { 
-//     // async function changeImage() { 
-//       var nextImage = (1 + cur) % images.length; 
-//       images[cur].style.zIndex = top + 1; 
-//       images[nextImage].style.zIndex = top; 
-
-//       await transition(); 
-//       // await transition(); 
-//       images[cur].style.zIndex = top; 
-
-//       images[nextImage].style.zIndex = top + 1; 
-
-//       top = top + 1; 
-
-//       images[cur].style.opacity = 1; 
-      
-//       cur = nextImage; 
-//     }  
-  
-//   function transition() { 
-//     return new Promise(function(resolve, reject) { 
-//       var del = 0.01; 
-
-//       var id = setInterval(changeOpacity, 10); 
-
-//       function changeOpacity() { 
-//         images[cur].style.opacity -= del; 
-//         if (images[cur].style.opacity <= 0) { 
-//           clearInterval(id); 
-//           resolve(); 
-//         } 
-//       } 
-//     }) 
-//   } 
-// }
+}, false);
 
 
-
-
-// // Pakovanje gallery
-
-// function imageGallery() {
-//   const highlight = document.querySelector(".gallery-hightlight");
-//   const previews = document.querySelectorAll(".package-preview img");
-
-//   previews.forEach(preview => {
-//     preview.addEventListener("click", function() {
-//       const smallSrc = this.src;
-//       const bigSrc = smallSrc.replace("small", "big");
-//       previews.forEach(preview => preview.classList.remove("package-active"));
-//       highlight.src = bigSrc;
-//       preview.classList.add("package-active");
-//     });
-//   });
-// }
-// imageGallery();
 
 
 
@@ -137,9 +58,6 @@ let zoomImg = function () {
   sledeci = nextBtn;
   prethodni = prevBtn;
 
-  // console.log(sledeci);
-  // console.log(prethodni);
-
   while(nextBtn !== null){
     array[i]=nextBtn;
     i++;
@@ -153,19 +71,10 @@ let zoomImg = function () {
 
   if(sledeci == null || sledeci == undefined){
     sledeci = array[i-1];
-    // sledeci = array[3];
   }
   if(prethodni == undefined || prethodni == null){
     prethodni = array[i-1];
-    // prethodni = array[3];
   }
-
-  // console.log(array);
-  // console.log(array.length);
-  // console.log(prethodni);
-  // console.log(clone);
-  // console.log(sledeci);
-  
 
   clone.classList.remove("zoomD");
 
@@ -254,6 +163,7 @@ function slideRigth(){
   lb = document.getElementById("lb-back");
   lb.classList.add("show");
 }
+
 
 // Keypress arrows left and right , and also escape
 document.addEventListener('keydown',function(event){
