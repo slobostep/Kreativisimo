@@ -32,7 +32,7 @@ body{
     filter:  drop-shadow(0px 1px 0 var(--color-one)) ;
     position: sticky;
     top: 0;
-    z-index: 99999;
+    z-index: 1000;
     
 }
 .header-wrapper{
@@ -119,26 +119,42 @@ body{
 .main{
     height: 90vh;
 }
-.main-images img{
+.main-images img {
     position: absolute;
     top: 0;
     left: 0;
     object-fit: cover;
     object-position: center center;
-    max-width: 100%;
-    overflow: hidden;
     width: 100%;
     height: 100%;
     z-index: -1;
     filter: brightness(40%);
 }
+.main-images a:nth-of-type(1) {
+    animation-name: fader;
+    animation-delay: 2s;
+    animation-duration: 4s;
+    z-index: 20;
+}
+.main-images a:nth-of-type(2) {
+    z-index: 10;
+}
+.main-images a:nth-of-type(n+3) {
+    display: none;
+}
+
+@keyframes fader {
+    from { opacity: 1.0; }
+    to   { opacity: 0.0; }
+}
+
 .main-wrapper{
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 .main-text{
-    z-index: 50000;
+    z-index: 100;
     color: var(--color-three);
     height: 100%;
     display: flex;
