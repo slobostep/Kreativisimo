@@ -318,8 +318,8 @@ body{
 .imgs-info{
     font-family: var(--title);
     padding-top: 3em;
-    margin-left: 20px;
-    margin-bottom: .5em;
+    margin-bottom: 1em;
+    text-align: center;
 }
 .imgs img{
     /* box-shadow: 1px 1px 4px 1px; */
