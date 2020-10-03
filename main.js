@@ -117,8 +117,6 @@ hamburger.addEventListener('click',() =>{
 
 // Gallery 
 
-
-
 var sledeci ;
 var prethodni ;
 var array;
@@ -162,11 +160,11 @@ let zoomImg = function () {
     // prethodni = array[3];
   }
 
-  console.log(array);
-  console.log(array.length);
-  console.log(prethodni);
-  console.log(clone);
-  console.log(sledeci);
+  // console.log(array);
+  // console.log(array.length);
+  // console.log(prethodni);
+  // console.log(clone);
+  // console.log(sledeci);
   
 
   clone.classList.remove("zoomD");
@@ -229,7 +227,6 @@ function slideLeft(){
 
 
 // Show next image
-
 function slideRigth(){
 
   if(sledeci == null || sledeci == undefined){
@@ -258,38 +255,22 @@ function slideRigth(){
   lb.classList.add("show");
 }
 
+// Keypress arrows left and right , and also escape
+document.addEventListener('keydown',function(event){
+  if(event.key==='ArrowLeft'){
+    slideLeft();
+  }else if(event.key==='ArrowRight'){
+    slideRigth();
+  }else if(event.key==='Escape'){
+    console.log(event.key);
+    document.getElementById("lb-back").classList.remove("show");
+  }
+});
+
 prevBtn.addEventListener('click',function(){
 slideLeft();
 })
-
-
 nextBtn.addEventListener('click',function(){
 slideRigth();
 })
-
-// prevBtn.addEventListener('keydown', function(event) {
-//   const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
-//   switch (event.key) {
-//     case "ArrowLeft":
-//       slideLeft();
-//         break;
-//     case "ArrowDown":
-//       slideLeft();
-//         break;
-//   }
-// });
-
-// nextBtn.addEventListener('keydown', function(event) {
-//   const key = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
-//   switch (event) {
-    
-//     case "ArrowRight":
-//       slideRigth();
-//         break;
-//     case "ArrowUp":
-//       slideRigth();
-//         break;
-
-//   }
-// });
 
