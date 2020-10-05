@@ -225,6 +225,7 @@ body{
     flex-basis: 50%;
 }
 .about-us p{
+    max-width: 60ch;
     line-height: 1.5;
     margin-bottom: 2em;
 }
