@@ -635,6 +635,9 @@ footer {
     }
 }
 @media (max-width:600px){
+    .lb-buttons{
+        bottom: 70px;
+    }
     .info-item{
         flex-direction: column;
         width: 80%;
